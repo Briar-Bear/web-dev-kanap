@@ -4,10 +4,9 @@ fetch('http://localhost:3000/api/products')
 .then((data) => {
     return data.json();
 }).then((completedata) => {
-    //console.log(completedata[2].name);
     let data1 ="";
     completedata.map((values) => {
-        data1+= `<section class="items" id="items">
+        data1+= `
         <a href="./product.html?id=42">
           <article>
             <img
@@ -19,7 +18,7 @@ fetch('http://localhost:3000/api/products')
             </p>
           </article>
         </a>
-      </section>`
+      `
     });
     document.getElementById("items").innerHTML=data1;
 
