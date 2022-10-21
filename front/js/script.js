@@ -5,16 +5,16 @@ fetch('http://localhost:3000/api/products')
     return data.json();
 }).then((completedata) => {
     let data1 ="";
-    completedata.map((values) => {
+    completedata.map((product) => {
         data1+= `
-        <a href="./product.html?id=42">
+        <a href="./product.html?id=${product._id}">
           <article>
             <img
-              src=${values.imageUrl}
+              src=${product.imageUrl}
               alt="Lorem ipsum dolor sit amet, Kanap name1"
             />
-            <h3 class="productName">${values.name}</h3>
-            <p class="productDescription">${values.description}
+            <h3 class="productName">${product.name}</h3>
+            <p class="productDescription">${product.description}
             </p>
           </article>
         </a>
